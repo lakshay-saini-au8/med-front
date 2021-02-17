@@ -34,7 +34,7 @@ const Register = () => {
   }, [success, dispatch, error]);
   useEffect(() => {
     if (userInfo) {
-      history.push("/dashboard/profile");
+      history.push("/");
     }
   }, [dispatch, userInfo, history, loginError]);
   const onSubmit = (data) => {

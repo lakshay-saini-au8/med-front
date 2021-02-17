@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Table, Badge } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import "./index.css";
-import { myOrders, updateOrderStatus } from "../../utils/api";
+import { allOrders, updateOrderStatus } from "../../utils/api";
 import Loader from "../Reuseable/Loader";
-const Orders = () => {
+const AllOrders = () => {
   const loginUser = useSelector((state) => state.loginUser);
   const { userInfo } = loginUser;
   const [orders, setOrders] = useState(null);
@@ -14,7 +13,7 @@ const Orders = () => {
   useEffect(() => {
     if (!orders) {
       setLoading(true);
-      myOrders(userInfo.token).then((res) => {
+      allOrders(userInfo.token).then((res) => {
         const { data, message } = res;
         if (data) {
           setOrders(data);
@@ -31,7 +30,7 @@ const Orders = () => {
     updateOrderStatus(userInfo.token, orderId).then((res) => {
       const { status, data, message } = res;
       if (status) {
-        myOrders(userInfo.token).then((res) => {
+        allOrders(userInfo.token).then((res) => {
           const { data, message } = res;
           if (data) {
             setOrders(data);
@@ -61,6 +60,7 @@ const Orders = () => {
                 <th className="border-0">Total</th>
                 <th className="border-0">Paid</th>
                 <th className="border-0">Delivered</th>
+                {userInfo.isAdmin && <th className="border-0">Update</th>}
               </tr>
             </thead>
 
@@ -103,6 +103,18 @@ const Orders = () => {
                         </p>
                       )}
                     </td>
+                    {userInfo.isAdmin && (
+                      <td className="align-middle ">
+                        <Badge
+                          className="p-2 mb-3 mr-1 view-button"
+                          onClick={() => {
+                            updateStatus(order._id);
+                          }}
+                        >
+                          Update As Delivered
+                        </Badge>
+                      </td>
+                    )}
                   </tr>
                 ))
               )}
@@ -114,4 +126,4 @@ const Orders = () => {
   );
 };
 
-export default Orders;
+export default AllOrders;

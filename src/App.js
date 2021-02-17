@@ -1,4 +1,6 @@
 import { Route, Switch } from "react-router-dom";
+import AllOrders from "./components/AllOrders";
+import AllProducts from "./components/AllProducts";
 import Cart from "./components/Cart";
 import Header from "./components/Header";
 import Orders from "./components/Orders";
@@ -22,8 +24,9 @@ function App() {
         />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/orders" component={Orders} />
-        <Route exact path="/allorders" component={Orders} />
+        <Route exact path="/allorders" component={AllOrders} />
         <Route exact path="/alluser" component={Users} />
+        <Route exact path="/allProducts" component={AllProducts} />
         {/* <Route path="/login" component={LoginPage} />
         <Route path="/register" component={LoginPage} /> */}
       </Switch>

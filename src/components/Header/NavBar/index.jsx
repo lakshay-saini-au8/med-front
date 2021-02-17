@@ -132,6 +132,15 @@ const NavBar = () => {
                   <LinkContainer
                     exact={true}
                     activeStyle={{ borderBottom: "2px solid #09dca4" }}
+                    to="/allProducts"
+                  >
+                    <Nav.Link className="text-dark myLink  mt-2 ">
+                      All Products
+                    </Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer
+                    exact={true}
+                    activeStyle={{ borderBottom: "2px solid #09dca4" }}
                     to="/alluser"
                   >
                     <Nav.Link className="text-dark myLink  mt-2 ">

@@ -94,6 +94,26 @@ export const myOrders = async (token) => {
     };
   }
 };
+export const allOrders = async (token) => {
+  console.log(token);
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const { data } = await axios.get(`${BASE_URL}/orders/`, config);
+    return { data };
+  } catch (error) {
+    return {
+      message:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    };
+  }
+};
 export const updateOrderStatus = async (token, orderId) => {
   try {
     const config = {
@@ -174,6 +194,27 @@ export const deleteUserById = async (token, userId) => {
   };
   try {
     let URL = `${BASE_URL}/users/${userId}`;
+    const { data } = await axios.delete(`${URL}`, config);
+    return { success: "success", data };
+  } catch (error) {
+    return {
+      message:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    };
+  }
+};
+
+export const deleteProductById = async (token, productId) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  try {
+    let URL = `${BASE_URL}/products/${productId}`;
     const { data } = await axios.delete(`${URL}`, config);
     return { success: "success", data };
   } catch (error) {
