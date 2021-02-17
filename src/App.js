@@ -1,7 +1,9 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import AllOrders from "./components/AllOrders";
 import AllProducts from "./components/AllProducts";
 import Cart from "./components/Cart";
+import EditProduct from "./components/EditProduct";
+import AddProduct from "./components/AddProduct";
 import Header from "./components/Header";
 import Orders from "./components/Orders";
 import Users from "./components/Users";
@@ -9,6 +11,7 @@ import Login from "./pages/Login";
 import MedicineDetail from "./pages/MedicineDetail";
 import ProductPage from "./pages/ProductPage";
 import Register from "./pages/Register";
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <>
@@ -23,12 +26,17 @@ function App() {
           component={MedicineDetail}
         />
         <Route exact path="/cart" component={Cart} />
-        <Route exact path="/orders" component={Orders} />
-        <Route exact path="/allorders" component={AllOrders} />
-        <Route exact path="/alluser" component={Users} />
-        <Route exact path="/allProducts" component={AllProducts} />
-        {/* <Route path="/login" component={LoginPage} />
-        <Route path="/register" component={LoginPage} /> */}
+        <ProtectedRoute exact path="/orders" component={Orders} />
+        <ProtectedRoute exact path="/allorders" component={AllOrders} />
+        <ProtectedRoute exact path="/alluser" component={Users} />
+        <ProtectedRoute exact path="/allProducts" component={AllProducts} />
+        <ProtectedRoute
+          exact
+          path="/editProduct/:productId"
+          component={EditProduct}
+        />
+        <ProtectedRoute exact path="/addProduct" component={AddProduct} />
+        <Redirect to="/" />
       </Switch>
     </>
   );

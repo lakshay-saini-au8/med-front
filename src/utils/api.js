@@ -226,3 +226,45 @@ export const deleteProductById = async (token, productId) => {
     };
   }
 };
+
+export const updateProduct = async (token, productId, updateData) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    let URL = `${BASE_URL}/products/${productId}`;
+    const { data } = await axios.put(`${URL}`, updateData, config);
+    return { status: "success", data };
+  } catch (error) {
+    return {
+      message:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    };
+  }
+};
+
+export const addProduct = async (token, updateData) => {
+  try {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    let URL = `${BASE_URL}/products/`;
+    const { data } = await axios.post(`${URL}`, updateData, config);
+    return { status: "success", data };
+  } catch (error) {
+    return {
+      message:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    };
+  }
+};

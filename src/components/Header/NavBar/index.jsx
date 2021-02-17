@@ -38,7 +38,7 @@ const NavBar = () => {
         <LinkContainer exact={true} to="/">
           <Navbar.Brand className="myBrand font-weight-bolder pr-1">
             <i className="fas fa-heartbeat mr-2"></i>
-            KGHub
+            Medico
           </Navbar.Brand>
         </LinkContainer>
 
@@ -127,6 +127,15 @@ const NavBar = () => {
                   >
                     <Nav.Link className="text-dark myLink  mt-2 ">
                       All Orders
+                    </Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer
+                    exact={true}
+                    activeStyle={{ borderBottom: "2px solid #09dca4" }}
+                    to="/addProduct"
+                  >
+                    <Nav.Link className="text-dark myLink  mt-2 ">
+                      Add Product
                     </Nav.Link>
                   </LinkContainer>
                   <LinkContainer

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Table, Badge, Image } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import { useSelector } from "react-redux";
 import { deleteProductById, getAllProducts } from "../../utils/api";
 import Loader from "../Reuseable/Loader";
@@ -89,16 +90,25 @@ const AllProducts = () => {
                     </td>
 
                     {userInfo.isAdmin && (
-                      <td className="align-middle ">
-                        <Badge
-                          className="p-2 mb-3 mr-1 print-button"
-                          onClick={() => {
-                            deleteProduct(product._id);
-                          }}
-                        >
-                          Delete
-                        </Badge>
-                      </td>
+                      <>
+                        <td className="align-middle ">
+                          <Badge
+                            className="p-2 mb-3 mr-1 print-button"
+                            onClick={() => {
+                              deleteProduct(product._id);
+                            }}
+                          >
+                            Delete
+                          </Badge>
+                        </td>
+                        <td className="align-middle ">
+                          <LinkContainer to={`editProduct/${product._id}`}>
+                            <Badge className="p-2 mb-3 mr-1 print-button">
+                              Edit
+                            </Badge>
+                          </LinkContainer>
+                        </td>
+                      </>
                     )}
                   </tr>
                 ))

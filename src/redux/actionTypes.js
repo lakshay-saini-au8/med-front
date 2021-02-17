@@ -1,5 +1,5 @@
-export const BASE_URL = "https://medfprt.herokuapp.com/api/v1";
-// export const BASE_URL = "http://localhost:9999/api/v1";
+// export const BASE_URL = "https://medfprt.herokuapp.com/api/v1";
+export const BASE_URL = "http://localhost:9999/api/v1";
 // user action constant
 export const USER_REGISTER_REQUEST = "USER_REGISTER_REQUEST";
 export const USER_REGISTER_SUCCESS = "USER_REGISTER_SUCCESS";
