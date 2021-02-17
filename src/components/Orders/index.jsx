@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, Table, Image, Badge } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
+import { Container, Row, Col, Table, Badge } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import "./index.css";
 import { myOrders, updateOrderStatus } from "../../utils/api";
@@ -32,7 +31,16 @@ const Orders = () => {
     updateOrderStatus(userInfo.token, orderId).then((res) => {
       const { status, data, message } = res;
       if (status) {
-        setOrders(null);
+        myOrders(userInfo.token).then((res) => {
+          const { data, message } = res;
+          if (data) {
+            setOrders(data);
+          }
+          if (message) {
+            setError(message);
+          }
+          setLoading(false);
+        });
       }
       if (message) {
         setError(message);
