@@ -1,0 +1,35 @@
+.product-card * {
+  text-decoration: none !important;
+  transition: all 0.5s;
+}
+.product-card {
+  box-shadow: 3px 3px 10px rgba(128, 128, 128, 0.308);
+}
+.product-card-button {
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid #01cae4;
+  color: #01cae4;
+  border-radius: 3px;
+}
+.product-card-button:hover,
+.product-card-button:focus {
+  color: white;
+  background-color: #01cae4;
+}
+.product-card-button.book-now {
+  background-color: #01cae4;
+  color: white;
+}
+.product-card-button.book-now:hover {
+  background-color: rgb(16, 151, 168);
+}
+.product-card-img {
+  width: 100%;
+}
+.product-card-title {
+  color: black;
+}
+.product-card-title:hover {
+  color: #09dca4;
+}

@@ -1,0 +1,61 @@
+.tab-links {
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+}
+.tab-links:hover {
+  border-bottom: 3px solid #dddddd;
+  color: #20c0f3 !important;
+}
+
+.tab-links.current {
+  border-bottom: 3px solid #20c0f3;
+  color: #20c0f3 !important;
+}
+.appointments-doctor {
+  cursor: pointer;
+}
+.appointments-doctor-name:hover {
+  color: #09e7c9;
+}
+.pill-success {
+  background-color: #28a7463f;
+  color: #28a745;
+}
+.pill-warning {
+  color: #ffa200;
+  background-color: #ffa2003a;
+}
+.pill-danger {
+  color: #eb0000;
+  background-color: #eb000027;
+}
+.view-button {
+  color: #1db9aa;
+  background-color: #1db9a93f;
+  cursor: pointer;
+}
+.print-button {
+  color: #2196f3;
+  background-color: #2195f331;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #f6f6f6;
+}
+
+.attachment-link {
+  cursor: pointer;
+}
+.attachment-link:hover {
+  color: #09e7c9;
+}
+table {
+  white-space: nowrap;
+}
+.table-doctor-cell {
+  width: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

@@ -1,0 +1,13 @@
+.add-cart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+
+.add-cart-button:hover {
+  background-color: #0de0fe;
+  color: white;
+}

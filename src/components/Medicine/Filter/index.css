@@ -1,0 +1,39 @@
+.filter-container {
+  height: fit-content;
+}
+
+.custom-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.check-box {
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(128, 128, 128, 0.432);
+  border-radius: 2px;
+  color: #0de0fe;
+}
+.search-filter-button {
+  outline: none !important;
+  border: none !important;
+  color: white;
+  background-color: #01cae4 !important;
+  border-radius: 3px;
+}
+.search-filter-button:hover,
+.search-filter-button:focus {
+  outline: none !important;
+  border: none !important;
+  color: white;
+  background-color: #179badd8 !important;
+}

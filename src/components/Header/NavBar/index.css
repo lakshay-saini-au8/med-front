@@ -1,0 +1,41 @@
+.myLink:hover {
+  color: #09dca4 !important;
+}
+.my-button {
+  background-color: #09dca4;
+}
+.my-btn:hover {
+  color: white !important;
+}
+.my-btn:focus .my-btn:active .active.my-btn {
+  color: white !important;
+  background-color: red !important;
+}
+
+.myBrand {
+  border-right: 2px solid #09dca4;
+}
+
+.options-container > div {
+  align-items: center;
+}
+
+.options-container > div > .active {
+  display: flex;
+  align-items: center;
+}
+.cart-link-badge {
+  position: absolute;
+  z-index: 3;
+  top: -5px;
+  left: 0;
+}
+.cart-button {
+  position: relative;
+}
+@media only screen and (max-width: 1000px) {
+  .cart-link-badge {
+    top: 10px;
+    left: 96%;
+  }
+}
